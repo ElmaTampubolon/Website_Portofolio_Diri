@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main">
+        <div class="navbar">
+            <ul>
+                <li><a href="#" id="home-link">HOME</a></li>
+                <li><a href="#" id="about-link">ABOUT</a></li>
+                <li><a href="#" id="contact-link">CONTACT</a></li>
+                <li><a href="#" id="form-link">FORM</a></li>
+            </ul>
+        </div>
+
+        <div class="info">
+            <h3>Hallo, Saya <span>Elma Ruis</span>.</h3>
+            <h1><span>W</span>ELCOME!</h1>
+            <h3>Website ini merupakan portofolio diri.</h3>
+        </div>   
+
+        <div class="image">
+            <img src="elma.png" class="girl">
+        </div>
+
+        <div class="icons">
+                <a href="https://instagram.com/elmaaey?igshid=MzRlODBiNWFlZA==" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/fckmdd?s=11" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.facebook.com/elma.ruiss?mibextid=LQQJ4d" target="_blank"><i class="fab fa-facebook"></i></a>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=sans-serif">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    // Simpan konten awal dalam variabel
+    var homeContent = $('.info').html();
+
+    $(document).ready(function() {
+        // Fungsi untuk menampilkan konten "About" ketika tautan "About" ditekan
+        $('#about-link').click(function() {
+            // Ganti konten dalam elemen dengan class "info" dengan konten "About" yang baru
+            $('.info').html(`
+                <h1><span>A</span>bout<span>M</span>e</h1>
+                <div class="about-info">
+                <p>Nama              :</span> Elma Ruis</p>
+                <p>Tempat, tgl lahir :</span> Batam, 31 Oktober 2003</p>
+                <p>Asal              :</span> Batam, Kepulauan Riau</p>
+                <p>Agama            :</span> Kristen</p>
+                <p>Alamat           :</span> Homestay, Gang Buanasari No.8A, Jimbaran, Kuta Selatan, Bali</p>
+                <br>
+                <p>Sedang menempuh perkuliahan di Universitas Udayana, Prodi Teknologi Informasi, Fakultas Teknik</p>
+                <p>, merupakan mahasiswa angkatan 2022.</p>
+            `);
+        });
+        $('#contact-link').click(function() {
+            $('.info').html(`
+                <h1><span>C</span>ontact</h1>
+                <div class="contact-info">
+                    <p>Email         :</span> elmatampubolon@gmail.com</p>
+                <p>Yahoo         :</span> elmaruiss@yahoo.com
+            `);
+        });
+        $('#form-link').click(function() {
+            $('.info').html(`
+                <h1><span>F</span>orm<span>K</span>erja<span>S</span>ama</h1>
+                <div class="form-info">
+                    <form action="proses_form.php" method="POST">
+                <label for="nama">Nama:</label>
+                <input type="text" id="nama" name="nama" required><br><br>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                
+                <label for="pesan">Pesan:</label>
+                <textarea id="pesan" name="pesan" required></textarea><br><br>
+                
+                <input type="submit" value="Kirim">
+            </form>
+        </div>
+    `);
+});
+
+        $('#home-link').click(function() {
+                // Ganti konten dalam elemen dengan class "info" dengan konten "Home" yang disimpan dalam variabel
+                $('.info').html(homeContent);
+            });
+        });
+</script>
+
+</body>
+</html>
